@@ -1,9 +1,10 @@
-import React from "react"
+import { useEffect } from "react"
 
-const Post = (props) => {
+const Post = ({ content }) => {
   return (
     <div>
-      <p> akjhsfljashfjlh</p>
+      <h1>hi</h1>
+      <p>{content}</p>
     </div>
   )
 }
