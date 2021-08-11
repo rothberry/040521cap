@@ -11,48 +11,67 @@
 ## Models
 
 Travel
+
 - User, destination, reviews, likes/rating
 
 Social Media:
+
 - User, post, comments, followers/following, likes
 
 Postcard Creator (More Frontend Focused)
+
 - User, card, destination
 
 Workout:
+
 - User, exercises, muscles/groups, types of excercises
 
 Words (Backend):
+
 - User, words, jumbled words or soemthing, phonetically the same word, different word changes
 
 Mood/Vision Board Gen
+
 - User, moods, search api for images with a feeling?
 
 # SOZIALS
 
 Social Media:
+
 - User, post, comments, followers, likes
 
 Associations
 
-User      many      Posts
-Posts     belongs   User
+User many Posts
+Posts belongs User
 
-Post      many      Comments
-Comments  belongs   Post
+Post many Comments
+Comments belongs Post
 
-User      many      Comments  through   Posts
+User many Comments through Posts
 
-Post      many      Likes
-User      many      Likes     through   Posts
+Post many Likes
+User many Likes through Posts
 
 <!-- 2 Options -->
+
 Facebook: Request, and confirm friends (2 way)
 
-User      many      User      through   Followers
+User many User through Followers
 
-User:     username, password, email, pic, bio
-Post:     content(text for now), user_id
-Comment:  content, post_id, user_id
-Like:     post_id, user_id, liked(boolean) or delete and relike
+User: username, password, email, pic, bio
+Post: content(text for now), user_id
+Comment: content, post_id, user_id
+Like: post_id, user_id, liked(boolean) or delete and relike
 Follower: user_id_1, user_id_2
+
+### Day 2
+
+Goals:
+
+- Start Client Side
+-- react-router-dom
+-- react-bootstrap
+
+- Finish all the relationships
+- More Git
