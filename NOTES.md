@@ -72,6 +72,3 @@ Goals:
 - Start Client Side
 -- react-router-dom
 -- react-bootstrap
-
-- Finish all the relationships
-- More Git

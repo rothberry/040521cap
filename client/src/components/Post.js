@@ -1,10 +1,11 @@
-import { useEffect } from "react"
+// import { useEffect } from "react"
 
-const Post = ({ content }) => {
+const Post = ({ content, id, username }) => {
   return (
-    <div>
-      <h1>hi</h1>
-      <p>{content}</p>
+    <div className={`post-${id}`}>
+      <p>
+        {username}: {content}
+      </p>
     </div>
   )
 }

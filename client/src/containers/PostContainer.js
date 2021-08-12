@@ -26,9 +26,8 @@ const PostContainer = () => {
   }
 
   const mappedPosts = () => {
-    posts.map((post) => {
-      console.log(post)
-      return <Post content={post.content} />
+    return posts.map(({ content, id, user: { username } }) => {
+      return <Post key={id} content={content} id={id} username={username} />
     })
   }
 

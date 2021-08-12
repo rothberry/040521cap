@@ -5,7 +5,7 @@ const PostForm = () => {
   return (
     <div className='post-form'>
       <Form>
-        <Form.Group classname='mb-3'>
+        <Form.Group className='mb-3'>
           <Form.Label>Create Your Posts</Form.Label>
         </Form.Group>
       </Form>
