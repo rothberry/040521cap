@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 
-const PostForm = () => {
+const PostForm = ({ addPost }) => {
   const postContent = useRef("")
   const history = useHistory()
 
@@ -19,13 +19,13 @@ const PostForm = () => {
     fetch("/posts", postPostObj)
       .then((res) => res.json())
       .then((data) => {
-        // add to list of all the posts
-        // and/or redirect to the list of all the posts
-        history.push("/feed")
-        // history.push(`/posts/${data.id}`)
+        if (!data.errors) {
+          addPost(data)
+          history.push("/feed")
+        }
       })
   }
-  
+
   return (
     <div className='post-form'>
       <Form onSubmit={handleSubmit}>

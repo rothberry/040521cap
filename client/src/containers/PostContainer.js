@@ -1,29 +1,30 @@
 import Post from "../components/Post"
-import { useState, useEffect } from "react"
+import ListGroup from "react-bootstrap/ListGroup"
 
-const PostContainer = () => {
-  // have state of all the posts
-
-  const [posts, setPosts] = useState([])
+const PostContainer = ({ posts, setPosts }) => {
+  // ! MOVED UP TO APP FOR QUICKER RENDER TIMES
+  // const [posts, setPosts] = useState([])
   // fetch all the posts from the database
 
-  useEffect(() => {
-    fetchPosts()
-  }, [])
+  // useEffect(() => {
+  //   if (posts.length < 1) {
+  //     fetchPosts()
+  //   }
+  // }, [])
 
-  const fetchPosts = () => {
-    fetch("/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        if (!data.errors) {
-          setPosts(data)
-        } else {
-          console.log("Errors: ", data.errors)
-        }
-      })
-      .catch((err) => console.log({ err }))
-  }
+  // const fetchPosts = () => {
+  //   fetch("/posts")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data)
+  //       if (!data.errors) {
+  //         setPosts(data)
+  //       } else {
+  //         console.log("Errors: ", data.errors)
+  //       }
+  //     })
+  //     .catch((err) => console.log({ err }))
+  // }
 
   const mappedPosts = () => {
     return posts.map(({ content, id, user: { username } }) => {
@@ -36,10 +37,10 @@ const PostContainer = () => {
   // })
 
   return (
-    <div className='posts-container'>
+    <ListGroup className='posts-container'>
       {/* Mapping function for all the posts */}
       {mappedPosts()}
-    </div>
+    </ListGroup>
   )
 }
 

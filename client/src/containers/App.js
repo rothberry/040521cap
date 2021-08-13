@@ -5,6 +5,7 @@ import PostContainer from "./PostContainer"
 import PostForm from "../components/PostForm"
 import Login from "../components/Login"
 import Profile from "../components/Profile"
+import PostShow from "../components/PostShow"
 import "./App.css"
 import { useState, useEffect } from "react"
 
@@ -12,9 +13,11 @@ const App = () => {
   // ! Front end routes
   const [user, setUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false)
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
     findMe()
+    fetchPosts()
   }, [])
 
   const findMe = () => {
@@ -31,6 +34,24 @@ const App = () => {
       .catch((err) => console.log({ err }))
   }
 
+  const fetchPosts = () => {
+    fetch("/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        if (!data.errors) {
+          setPosts(data)
+        } else {
+          console.log("Errors: ", data.errors)
+        }
+      })
+      .catch((err) => console.log({ err }))
+  }
+
+  const addPost = (p) => {
+    setPosts([...posts, p])
+  }
+
   return (
     <div className='App'>
       <Nav setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
@@ -40,11 +61,11 @@ const App = () => {
         </Route>
 
         <Route exact path='/feed'>
-          <PostContainer />
+          <PostContainer posts={posts} setPosts={setPosts} />
         </Route>
 
         <Route exact path='/new-post'>
-          <PostForm />
+          <PostForm addPost={addPost} />
         </Route>
 
         <Route exact path='/login'>
@@ -53,6 +74,10 @@ const App = () => {
 
         <Route exact path='/profile'>
           <Profile user={user} />
+        </Route>
+
+        <Route path='/posts/:id'>
+          <PostShow posts={posts} />
         </Route>
 
         {/* <Route path='*'>
