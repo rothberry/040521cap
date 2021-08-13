@@ -72,3 +72,15 @@ Goals:
 - Start Client Side
 -- react-router-dom
 -- react-bootstrap
+
+
+### Day 3
+
+User Auth
+
+### Day 4
+
+Finish backend models
+- Comments
+Create new posts
+Add Comments

@@ -29,3 +29,22 @@ u2 = User.create(
 )
 
 puts "USERS SEEDED"
+
+p1 = u1.posts.create(content: "test 1")
+p2 = u1.posts.create(content: "test 2")
+p3 = u1.posts.create(content: "test 3")
+p4 = u2.posts.create(content: "test 4")
+p5 = u2.posts.create(content: "test 5")
+p6 = u2.posts.create(content: "test 6")
+
+puts "POSTS SEEDED"
+
+c1 = p1.comments.create(content: "com 1", user_id: u1.id)
+c2 = p1.comments.create(content: "com 2", user_id: u2.id)
+c3 = p2.comments.create(content: "com 3", user_id: u1.id)
+c4 = p2.comments.create(content: "com 4", user_id: u2.id)
+c5 = p3.comments.create(content: "com 5", user_id: u1.id)
+c6 = p4.comments.create(content: "com 6", user_id: u2.id)
+c7 = p5.comments.create(content: "com 7", user_id: u1.id)
+
+puts "COMMENTS SEEDED"
