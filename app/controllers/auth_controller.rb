@@ -15,7 +15,7 @@ class AuthController < ApplicationController
   end
 
   def signup
-
+    
   end
 
   def logout

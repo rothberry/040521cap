@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import Home from "../components/Home"
 import Nav from "../components/Nav"
 import PostContainer from "./PostContainer"
@@ -8,6 +8,7 @@ import Profile from "../components/Profile"
 import PostShow from "../components/PostShow"
 import "./App.css"
 import { useState, useEffect } from "react"
+import Signup from "../components/Signup"
 
 const App = () => {
   // ! Front end routes
@@ -72,12 +73,16 @@ const App = () => {
           <Login setUser={setUser} setLoggedIn={setLoggedIn} />
         </Route>
 
+        <Route exact path='/signup'>
+          <Signup setUser={setUser} setLoggedIn={setLoggedIn} />
+        </Route>
+
         <Route exact path='/profile'>
           <Profile user={user} />
         </Route>
 
         <Route path='/posts/:id'>
-          <PostShow posts={posts} />
+          <PostShow />
         </Route>
 
         {/* <Route path='*'>

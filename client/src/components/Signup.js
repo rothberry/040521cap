@@ -3,15 +3,19 @@ import { useHistory } from "react-router-dom"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 
-const Login = ({ setUser, setLoggedIn }) => {
+const Signup = ({ setUser, setLoggedIn }) => {
   const emailRef = useRef("")
   const passwordRef = useRef("")
+  const usernameRef = useRef("")
+  const bioRef = useRef("")
+  const picRef = useRef("")
+
   const history = useHistory()
 
-  const loginHandler = (e) => {
+  const signupHandler = (e) => {
     e.preventDefault()
 
-    const loginObj = {
+    const signupObj = {
       method: "post",
       headers: {
         "content-type": "application/json",
@@ -21,7 +25,7 @@ const Login = ({ setUser, setLoggedIn }) => {
         password: passwordRef.current.value,
       }),
     }
-    fetch("/login", loginObj)
+    fetch("/signup", signupObj)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
@@ -38,7 +42,7 @@ const Login = ({ setUser, setLoggedIn }) => {
   }
 
   return (
-    <Form onSubmit={loginHandler}>
+    <Form onSubmit={signupHandler}>
       <Form.Group className='mb-3' controlId='formBasicEmail'>
         <Form.Label>Email address</Form.Label>
         <Form.Control
@@ -59,14 +63,25 @@ const Login = ({ setUser, setLoggedIn }) => {
         />
       </Form.Group>
 
-      <Button
-        variant='secondary'
-        onClick={() => {
-          history.push("/signup")
-        }}
-      >
-        Signup
-      </Button>
+      <Form.Group className='mb-3' controlId='formBasicBio'>
+        <Form.Label>Bio</Form.Label>
+        <Form.Control ref={bioRef} name='bio' as='textarea' placeholder='Bio' />
+      </Form.Group>
+
+      <Form.Group className='mb-3' controlId='formBasicUsername'>
+        <Form.Label>Username</Form.Label>
+        <Form.Control
+          ref={usernameRef}
+          name='username'
+          type='text'
+          placeholder='Username'
+        />
+      </Form.Group>
+
+      <Form.Group className='mb-3' controlId='formFile'>
+        <Form.Label>Choose Picture</Form.Label>
+        <Form.Control type='file' />
+      </Form.Group>
 
       <Button variant='primary' type='submit'>
         Submit
@@ -75,4 +90,4 @@ const Login = ({ setUser, setLoggedIn }) => {
   )
 }
 
-export default Login
+export default Signup
