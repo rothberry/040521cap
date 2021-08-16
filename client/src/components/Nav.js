@@ -1,9 +1,14 @@
+import { useContext } from "react"
+import { Context } from "../contexts/Context"
 import { NavLink, useHistory } from "react-router-dom"
 import NavBar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/esm/Button"
 
-const Nav = ({ setUser, loggedIn, setLoggedIn }) => {
+// const Nav = ({ setUser, loggedIn, setLoggedIn }) => {
+const Nav = () => {
   const history = useHistory()
+
+  const { setUser, setLoggedIn, loggedIn } = useContext(Context)
 
   const activeStyle = {
     fontWeight: "bold",
