@@ -1,22 +1,19 @@
 /* eslint-disable */
 import { useParams } from "react-router"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
+import { Context } from "../context/Context"
 import { Chat } from "react-bootstrap-icons"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/esm/Button"
 
 const PostShow = () => {
-  const [showPost, setShowPost] = useState({})
+  // const [showPost, setShowPost] = useState({})
   const [showForm, setForm] = useState(false)
   const { id } = useParams()
+  const { showPost, fetchPost } = useContext(Context)
 
   useEffect(() => {
-    fetch(`/posts/${id}`)
-      .then((res) => res.json())
-      .then((p) => {
-        setShowPost(p)
-      })
-      .catch((err) => console.log({ err }))
+    fetchPost(id)
   }, [])
 
   const mappedComments = () => {

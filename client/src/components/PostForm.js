@@ -1,11 +1,21 @@
-import { useRef } from "react"
+import { useContext, useRef } from "react"
+import { Context } from "../context/Context"
 import { useHistory } from "react-router-dom"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 
-const PostForm = ({ addPost }) => {
+const PostForm = () => {
   const postContent = useRef("")
   const history = useHistory()
+
+  // const [state, setState] = useState({
+  //   postContent: ""
+  // })
+  // const handleChange = e => {
+  //   setState([e.target.name]: e.target.value)
+  // }
+
+  const { addPost } = useContext(Context)
 
   const handleSubmit = (e) => {
     e.preventDefault()

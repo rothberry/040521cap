@@ -1,15 +1,17 @@
-import { useRef } from "react"
+import { useContext, useRef } from "react"
 import { useHistory } from "react-router-dom"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
+import { Context } from "../context/Context"
 
-const Signup = ({ setUser, setLoggedIn }) => {
+const Signup = () => {
   const emailRef = useRef("")
   const passwordRef = useRef("")
   const usernameRef = useRef("")
   const bioRef = useRef("")
   const picRef = useRef("")
 
+  const { setUser, setLoggedIn } = useContext(Context)
   const history = useHistory()
 
   const signupHandler = (e) => {

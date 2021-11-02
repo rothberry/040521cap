@@ -84,3 +84,13 @@ Finish backend models
 - Comments
 Create new posts
 Add Comments
+
+### Day 5
+
+Adding Context (Global State)
+
+- Abstract our props/state into a global 'store'
+
+Pain point: if your app was too deep, then passing props through many components
+
+App -> container -> List -> ListItem -> ItemContainer ...

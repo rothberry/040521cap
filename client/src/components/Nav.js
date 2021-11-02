@@ -1,10 +1,14 @@
 import { NavLink, useHistory } from "react-router-dom"
 import NavBar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/esm/Button"
+import { useContext } from "react"
+import { Context } from "../context/Context"
 
-const Nav = ({ setUser, loggedIn, setLoggedIn }) => {
+const Nav = () => {
   const history = useHistory()
 
+  const { setUser, loggedIn, setLoggedIn } = useContext(Context)
+  
   const activeStyle = {
     fontWeight: "bold",
     color: "red",
