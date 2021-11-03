@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import Home from "../components/Home"
 import Nav from "../components/Nav"
 import PostContainer from "./PostContainer"
@@ -44,7 +44,7 @@ const App = () => {
         </Route>
 
         <Route exact path='/new-post'>
-          <PostForm />
+          <PostForm user={user} />
         </Route>
 
         <Route exact path='/login'>
@@ -54,10 +54,6 @@ const App = () => {
         <Route exact path='/profile'>
           <Profile user={user} />
         </Route>
-
-        {/* <Route path='*'>
-          <Redirect to='/' />
-        </Route> */}
       </Switch>
     </div>
   )

@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User = Api::V1::User
+Post = Api::V1::Post
 User.delete_all
 Post.delete_all
 

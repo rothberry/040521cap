@@ -1,5 +1,8 @@
-class AuthController < ApplicationController
-  # All user authentication will be here
+class Api::V1::AuthController < ApplicationController
+    # All user authentication will be here
+  User = Api::V1::User
+  Post = Api::V1::Post
+
 
   def login
     # find user with email
@@ -12,10 +15,6 @@ class AuthController < ApplicationController
     else
       render json: {errors: "Invalid Email or Password"}
     end
-  end
-
-  def signup
-
   end
 
   def logout
@@ -34,5 +33,5 @@ class AuthController < ApplicationController
       render json: {message: "Not Logged In"}
     end
   end
-
+  
 end
