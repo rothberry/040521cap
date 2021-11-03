@@ -14,10 +14,6 @@ class AuthController < ApplicationController
     end
   end
 
-  def signup
-
-  end
-
   def logout
     session.delete :user_id
     head :no_content

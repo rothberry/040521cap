@@ -29,3 +29,10 @@ u2 = User.create(
 )
 
 puts "USERS SEEDED"
+
+
+10.times do |post|
+  Post.create(user_id: u1.id, content: "qaooooooooow")
+  Post.create(user_id: u2.id, content: "nupeeee")
+end
+

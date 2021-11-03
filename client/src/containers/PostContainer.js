@@ -1,29 +1,34 @@
+import { useEffect, useContext } from "react"
+import { Context } from "../context/Context"
 import Post from "../components/Post"
-import { useState, useEffect } from "react"
 
 const PostContainer = () => {
   // have state of all the posts
 
-  const [posts, setPosts] = useState([])
+  // ! MOVED TO CONTEXT
+  // const [posts, setPosts] = useState([])
   // fetch all the posts from the database
+
+  const { posts, fetchPosts } = useContext(Context)
 
   useEffect(() => {
     fetchPosts()
   }, [])
 
-  const fetchPosts = () => {
-    fetch("/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        if (!data.errors) {
-          setPosts(data)
-        } else {
-          console.log("Errors: ", data.errors)
-        }
-      })
-      .catch((err) => console.log({ err }))
-  }
+  // ! MOVED TO CONTEXT
+  // const fetchPosts = () => {
+  //   fetch("/posts")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data)
+  //       if (!data.errors) {
+  //         setPosts(data)
+  //       } else {
+  //         console.log("Errors: ", data.errors)
+  //       }
+  //     })
+  //     .catch((err) => console.log({ err }))
+  // }
 
   const mappedPosts = () => {
     return posts.map(({ content, id, user: { username } }) => {

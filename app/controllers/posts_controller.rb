@@ -5,4 +5,9 @@ class PostsController < ApplicationController
     render json: posts
   end
   
+  def create
+
+  end
+  
+  
 end

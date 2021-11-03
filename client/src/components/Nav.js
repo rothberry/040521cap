@@ -1,25 +1,29 @@
+import { useContext } from "react"
 import { NavLink, useHistory } from "react-router-dom"
+import { Context } from "../context/Context"
 import NavBar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/esm/Button"
 
-const Nav = ({ setUser, loggedIn, setLoggedIn }) => {
-  const history = useHistory()
+const Nav = () => {
+  // const history = useHistory()
+  const { loggedIn, handleLogout } = useContext(Context)
 
   const activeStyle = {
     fontWeight: "bold",
     color: "red",
   }
 
-  const handleLogout = () => {
-    fetch("/logout", {
-      method: "DELETE",
-    }).then((data) => {
-      console.log("logged out")
-      setUser({})
-      setLoggedIn(false)
-      history.push("/")
-    })
-  }
+  // ! TO CONTEXT
+  // const handleLogout = () => {
+  //   fetch("/logout", {
+  //     method: "DELETE",
+  //   }).then((data) => {
+  //     console.log("logged out")
+  //     setUser({})
+  //     setLoggedIn(false)
+  //     history.push("/")
+  //   })
+  // }
 
   if (loggedIn) {
     return (

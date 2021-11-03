@@ -1,9 +1,16 @@
+import { useContext } from "react"
+import { Context } from "../context/Context"
 import Image from "react-bootstrap/Image"
 
-const Profile = ({ user: { username, bio, profile_picture } }) => {
+const Profile = () => {
+  // ! MOVED FROM PROPS TO CONTEXT
   const imgStyle = {
     width: "20%",
   }
+
+  const {
+    user: { username, bio, profile_picture },
+  } = useContext(Context)
 
   return (
     <>
