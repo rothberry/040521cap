@@ -31,7 +31,7 @@ class AuthController < ApplicationController
     if user
       render json: user
     else 
-      render json: {message: "Not Logged In"}
+      render json: {message: "Not Logged In"}, status: :unauthorized
     end
   end
 

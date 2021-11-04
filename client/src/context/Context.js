@@ -67,7 +67,7 @@ const ContextProvider = (props) => {
     findMe,
     addPost,
     fetchPost,
-    showPost
+    showPost,
   }
 
   return <Context.Provider value={store}>{props.children}</Context.Provider>
