@@ -21,7 +21,7 @@ const App = () => {
   // Component did mount
   useEffect(() => {
     findMe()
-    fetchPosts()
+    // fetchPosts()
   }, [])
 
   // ! MOVED TO OUR CONTEXT STORE

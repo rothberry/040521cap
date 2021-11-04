@@ -24,6 +24,8 @@ const ContextProvider = (props) => {
         if (!data.error) {
           setUser(data)
           setLoggedIn(true)
+        } else {
+          console.log(data)
         }
       })
       .catch((err) => console.log({ err }))
@@ -67,7 +69,7 @@ const ContextProvider = (props) => {
     findMe,
     addPost,
     fetchPost,
-    showPost
+    showPost,
   }
 
   return <Context.Provider value={store}>{props.children}</Context.Provider>
