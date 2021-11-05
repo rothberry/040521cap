@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :relationships
+  resources :relationships, only: [:index, :create, :destroy]
   resources :comments
   resources :posts
   resources :users, only: [:index]
