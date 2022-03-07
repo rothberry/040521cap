@@ -67,19 +67,31 @@ GEM
       zeitwerk (~> 2.3)
     bcrypt (3.1.16)
     bcrypt (3.1.16-java)
+<<<<<<< HEAD
     bootsnap (1.9.1)
+=======
+    bootsnap (1.7.7)
+>>>>>>> dev
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
     case_transform (0.2)
       activesupport
+    coderay (1.1.3)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
+<<<<<<< HEAD
     ffi (1.15.4)
     ffi (1.15.4-java)
     ffi (1.15.4-x64-mingw32)
     ffi (1.15.4-x86-mingw32)
+=======
+    ffi (1.15.3)
+    ffi (1.15.3-java)
+    ffi (1.15.3-x64-mingw32)
+    ffi (1.15.3-x86-mingw32)
+>>>>>>> dev
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -95,13 +107,18 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
     method_source (1.0.0)
+<<<<<<< HEAD
     mini_mime (1.1.2)
+=======
+    mini_mime (1.1.0)
+>>>>>>> dev
     mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     msgpack (1.4.2-java)
     nio4r (2.5.8)
     nio4r (2.5.8-java)
+<<<<<<< HEAD
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
@@ -110,16 +127,44 @@ GEM
     nokogiri (1.12.5-x64-mingw32)
       racc (~> 1.4)
     nokogiri (1.12.5-x86-mingw32)
+=======
+    nokogiri (1.12.3)
+      mini_portile2 (~> 2.6.1)
+      racc (~> 1.4)
+    nokogiri (1.12.3-java)
+      racc (~> 1.4)
+    nokogiri (1.12.3-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.12.3-x86-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.12.3-x86_64-linux)
+>>>>>>> dev
       racc (~> 1.4)
     pg (1.2.3)
     pg (1.2.3-x64-mingw32)
     pg (1.2.3-x86-mingw32)
+<<<<<<< HEAD
     puma (5.5.2)
       nio4r (~> 2.0)
     puma (5.5.2-java)
       nio4r (~> 2.0)
     racc (1.6.0)
     racc (1.6.0-java)
+=======
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry (0.14.1-java)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+      spoon (~> 0.0)
+    puma (5.4.0)
+      nio4r (~> 2.0)
+    puma (5.4.0-java)
+      nio4r (~> 2.0)
+    racc (1.5.2)
+    racc (1.5.2-java)
+>>>>>>> dev
     rack (2.2.3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -155,7 +200,13 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+<<<<<<< HEAD
     spring (3.0.0)
+=======
+    spoon (0.0.6)
+      ffi
+    spring (2.1.1)
+>>>>>>> dev
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -176,11 +227,19 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
+<<<<<<< HEAD
   java-
+=======
+  java
+>>>>>>> dev
   ruby
   x64-mingw32
   x86-mingw32
   x86-mswin32
+<<<<<<< HEAD
+=======
+  x86_64-linux
+>>>>>>> dev
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.12)
@@ -189,6 +248,7 @@ DEPENDENCIES
   byebug
   listen (~> 3.3)
   pg (~> 1.1)
+  pry (~> 0.14.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 6.1.4)

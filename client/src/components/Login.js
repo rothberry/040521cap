@@ -1,17 +1,17 @@
-import { useRef } from "react"
+import { useContext, useRef } from "react"
+import { useHistory } from "react-router-dom"
+import { Context } from "../context/Context"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
-import { useHistory } from "react-router-dom"
 
-const Login = ({ setUser, setLoggedIn }) => {
+const Login = () => {
   const emailRef = useRef("")
   const passwordRef = useRef("")
   const history = useHistory()
+  const { setUser, setLoggedIn } = useContext(Context)
 
   const loginHandler = (e) => {
     e.preventDefault()
-    console.log(emailRef.current.value)
-    console.log(passwordRef.current.value)
 
     const loginObj = {
       method: "post",
@@ -60,6 +60,16 @@ const Login = ({ setUser, setLoggedIn }) => {
           placeholder='Password'
         />
       </Form.Group>
+
+      <Button
+        variant='secondary'
+        onClick={() => {
+          history.push("/signup")
+        }}
+      >
+        Signup
+      </Button>
+
       <Button variant='primary' type='submit'>
         Submit
       </Button>
